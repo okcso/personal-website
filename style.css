@@ -1,0 +1,257 @@
+:root {
+    --bg-blue: #002147; /* Adjust to match your exact navy */
+    --accent-gold: #e1c18d;
+    --text-white: #ffffff;
+    --sidebar-width: 12%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: block; 
+    height: auto;   
+    background-color: var(--bg-blue);
+    color: var(--text-white);
+    overflow-x: hidden; 
+}
+
+/* Main Hero Area */
+#hero-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 250px;
+    height: 100vh;
+    padding: 0 5%;
+    position: relative;
+    
+    /*background: linear-gradient(to right, rgba(0, 33, 71, 1), rgba(0, 33, 71, 0.5)), 
+                url('owen_website_cover.png');*/
+    background: radial-gradient(ellipse farthest-corner at 80% 10%, rgba(0, 33, 71, 0), rgba(0, 33, 71, 0.3), rgba(0, 33, 71, 1), rgba(0, 33, 71, 1)), url('owen_website_cover.png');
+    background-size: cover;
+    margin-right: var(--sidebar-width);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.2rem;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Logos */
+.logos {
+    display: flex;
+    gap: 15px;
+}
+
+.logo-icon { height: 60px; }
+
+.ece-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Image Styling */
+.image-container {
+    width: 400px;
+    height: 500px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Sidebar Navigation */
+/* Change body to allow scrolling */
+
+/* Base Sidebar Style (Default) */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: #001a38;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    position: fixed; /* Fixed to side initially */
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transition: all 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+/* Sticky Top Bar Style (Triggered by JS) */
+.sidebar.sticky {
+    width: 100%;
+    height: 60px; /* Slimmer top bar */
+    padding-left: 0;
+    justify-content: center;
+    background-color: rgba(0, 26, 56, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--accent-gold);
+}
+
+.sidebar.sticky ul {
+    display: flex; /* Horizontal links */
+    gap: 30px;
+}
+
+.sidebar.sticky ul li {
+    margin-bottom: 0; /* Remove vertical spacing */
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 25px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    color: var(--accent-gold);
+}
+
+
+
+.content {
+    width: 100%;
+    padding: 100px 10%;
+    min-height: 100vh;
+    background: #001a38; /* Slightly different blue to distinguish sections */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sections General */
+section {
+    padding: 60px 0;
+    margin-right: var(--sidebar-width);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    /*color: #FFF;*/
+    color: var(--accent-gold);
+    position: relative;
+}
+
+/* Projects Grid */
+
+#projects {
+    color: #333;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.project-card {
+    background: #cfcfcf;
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.tech-stack {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contact Me */
+#contact {
+    text-align: center;
+}
+
+#contact a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+#contact a:hover {
+    color: var(--accent-gold);
+}
+
+.contact-links a {
+    padding: 20px;
+}
+
+.contact-links {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Footer */
+#footer div[class="container"] {
+    min-height: 105px;
+    background-color: #666;
+    text-align: center;
+    width: 88%;
+}
+
+.footer-note {
+    padding-top: 45px;
+    font-size: 15px;
+}
